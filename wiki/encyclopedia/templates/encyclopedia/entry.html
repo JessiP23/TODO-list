@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}   <!--this is the title variable that wil display the title in the url-->
+{% endblock %} 
+
+{% block body %}
+    {{ content |safe}}  <!--this is the variable that contains the content of the title NO NEED TO BE ESCAPED-->
+
+    <form action="{% url 'edit_page' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="entry_title" value="{{ title }}">   
+        <input type="submit" value="Edit" class="btn btn-dark">  
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %} 
+
+{% block body %}
+    <h1>Search</h1>
+
+    <ul>
+        {% for entry in guess %}  <!--list of entries matching the input-->
+            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>   <!--this is to redirect the link and entry is the name given to the path-->
+        {% endfor %}
+    </ul>
+
+{% endblock %}

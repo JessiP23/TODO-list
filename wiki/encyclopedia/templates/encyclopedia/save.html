@@ -1,0 +1,9 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Save Title   <!--this is the title variable that wil display the title in the url-->
+{% endblock %} 
+
+{% block body %}
+    {{ content |safe}}  <!--this is the variable that contains the content of the title NO NEED TO BE ESCAPED-->
+{% endblock %}

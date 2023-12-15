@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}  <!--block tag defined in layout-->
+    Encyclopedia
+{% endblock %} 
+
+{% block body %}
+    <h1>Error 404</h1>
+    <p>{{ false }}</p>  <!--this variable is stated in views.py and brings the was not found message-->
+
+
+{% endblock %}
+
+<!--this message is rendered in case the title doesnt exist-->

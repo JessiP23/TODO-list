@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Entries
+{% endblock %} 
+
+{% block body %}
+    <h1>Edit Page</h1>
+
+    <form action="{% url 'save_edit' %}" method="POST">   <!--this tells me the name of the function in views.py and urls.py so i can refer my variables in method.POST here by the value of name-->
+        {% csrf_token %}  
+        <label>Title: </label>
+        <input type="text" name="title" placeholder="Enter your title" value="{{ title }}">   <!--important: the name title might be the same as the views.py variable-->
+        <br/>
+        <label>Markdown Content: </label>
+        <br/>
+        <textarea name="content">{{ content }}</textarea>
+        <br/>
+        <br/>
+        <input type="submit" value="Edit" class="btn btn-secondary">
+    </form>
+
+{% endblock %}
+
